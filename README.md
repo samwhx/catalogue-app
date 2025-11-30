@@ -3,7 +3,8 @@
 A production-ready frontend application for displaying a restaurant catalogue, managing a cart, and handling order settings (location, date/time). Built with **Nuxt.js 4**, **Vue 3**, **TypeScript**, **Pinia**, and **Tailwind CSS**.
 
 🔗 **Live Demo:** [https://catalogue-app.pages.dev/](https://catalogue-app.pages.dev/)
-It may take a few retries as the Backend Server needs to be warmed up. After that, caches will kick in.
+
+It may take a few retries as the backend server needs to be warmed up. After that, caching will kick in.
 
 ## 🚀 Features
 

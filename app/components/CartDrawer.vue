@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { useCartStore, type CartItem } from "~/stores/cartStore";
+import { useLocationStore } from "~/stores/locationStore";
 import { ref, onMounted } from "vue";
 import BaseButton from "~/components/BaseButton.vue";
 
 const cartStore = useCartStore();
+const locationStore = useLocationStore();
 const isMounted = ref(false);
 const imageErrors = ref<Record<string, boolean>>({});
 
@@ -28,6 +30,25 @@ const calculateItemTotal = (cartItem: CartItem) => {
     if (opt.price) price += parseFloat(opt.price);
   });
   return (price * cartItem.quantity).toFixed(2);
+};
+
+const handleCheckout = () => {
+  // 1. Check Location (if delivery)
+  if (locationStore.fulfillmentType === 'delivery' && !locationStore.selectedLocation) {
+    cartStore.closeCart();
+    locationStore.openModal();
+    return;
+  }
+
+  // 2. Check Date/Time
+  if (!locationStore.selectedDateTime) {
+    cartStore.closeCart();
+    locationStore.openDateTimeModal();
+    return;
+  }
+
+  // 3. Proceed (Mock)
+  alert("Proceeding to checkout...");
 };
 </script>
 
@@ -178,7 +199,7 @@ const calculateItemTotal = (cartItem: CartItem) => {
             <span class="font-black text-2xl text-gray-900">SGD {{ cartStore.totalPrice }}</span>
           </div>
           <p class="text-xs text-gray-400 mb-4 text-center">Shipping & taxes calculated at checkout</p>
-          <BaseButton size="lg" block class="text-lg shadow-lg">
+          <BaseButton size="lg" block class="text-lg shadow-lg" @click="handleCheckout">
             Checkout
           </BaseButton>
         </div>

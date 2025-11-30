@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useCartStore } from "./cartStore";
 
 interface OneMapResult {
   SEARCHVAL: string;
@@ -133,6 +134,14 @@ export const useLocationStore = defineStore("location", {
     selectDateTime(date: Date) {
       this.selectedDateTime = date;
       this.closeDateTimeModal();
+
+      // Re-open cart if user was in checkout flow (implied by non-empty cart)
+      const cartStore = useCartStore();
+      if (!cartStore.isEmpty) {
+        setTimeout(() => {
+          cartStore.openCart();
+        }, 300);
+      }
     },
 
     async searchLocation(query: string) {

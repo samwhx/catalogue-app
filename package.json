@@ -1,0 +1,32 @@
+{
+  "name": "catalogue-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.11.3",
+    "nuxt": "^4.2.1",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.4.22",
+    "happy-dom": "^15.7.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3.4.0",
+    "vitest": "^2.1.8"
+  },
+  "optionalDependencies": {
+    "@oxc-parser/binding-darwin-arm64": "^0.99.0"
+  }
+}

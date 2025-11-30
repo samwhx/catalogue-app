@@ -1,0 +1,27 @@
+# Nuxt dev/build outputs
+.output
+.nuxt
+/.data
+/.nitro
+/dist
+/tmp
+
+# Node dependencies
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

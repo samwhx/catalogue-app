@@ -208,6 +208,11 @@ To evolve this MVP into a full-scale e-commerce platform, the following features
 - **Future Work**: Expand unit test coverage to all stores and add Playwright for E2E critical flows (checkout).
 - **Accessibility Audit**: Ensure WCAG 2.1 AA compliance (color contrast for color blindness, focus management in modals, and screen reader announcements).
 
+### 🌐 Globalization
+
+- **Internationalization (i18n)**: Implement `@nuxtjs/i18n` to support multiple languages (e.g., English, Chinese, Malay) for menu items and UI text.
+- **Currency Conversion**: Currency switching based on user choice.
+
 ---
 
 ## 8. 🏁 Conclusion
